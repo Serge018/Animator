@@ -87,9 +87,9 @@ class Animator
 			return false;
 		}
 
-		if (typeof selector_wrapper != 'string')
+		if (!init_options.selector_wrapper.length)
 		{
-			console.error(this.module_name + ' :: selector_wrapper requierd type of string');
+			console.error(this.module_name + ' :: unvalid selector_wrapper');
 			console.log('init_options : ', init_options);
 			return false;
 		}
@@ -105,15 +105,25 @@ class Animator
 			return false;
 		}
 
-		let result = this[setup_method_name](init_options);
-
-		if (!result)
+		let setup = (init_options) =>
 		{
-			console.error(this.module_name + ` :: ${ implementation_name } not setup`);
-			return false;
+			let result = this[setup_method_name](init_options);
+			if (!result)
+			{
+				console.error(this.module_name + ` :: ${ implementation_name } not setup`);
+			}
+
+			return result;
+		};
+
+		let selectors_wrapper = selector_wrapper.toString().split(',');
+		for (let selector_wrapper of selectors_wrapper)
+		{
+			// @todo проверка
+			setup({ ...init_options, selector_wrapper });
 		}
 
-		return result;
+		return true;
 	}
 
 
