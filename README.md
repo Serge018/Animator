@@ -14,19 +14,20 @@
   ```
 3. В самомй низу страници копируем к себе код ниже.  
 ```js
-  <script type="text/javascript">
-		window.animator = new Animator();
-		var init_options = {
-			selector_wrapper 	: [''#wrapper_distort_content_on_scroll', '.block-4 span'], // передаём селекторы
-			implementation_name	: 'distort_content_on_scroll',
-			will_change 		: 'transform',
-			timing_function		: 'cubic-bezier(.6,.17,.85,.54)', // кривая Безье анимации
-			transiton_duration	: 0.5,                            // продолжительность анимации 
-			speed 		    : 0.35,
-			offset_max		: 100
-		};
-		window.animator.init(init_options);
-	</script>
-  
-  
-  [ссалка на онлайн сервис настройки кривых Безье](#https://cubic-bezier.com/) 
+<script type="text/javascript">
+	window.animator = new Animator();
+	var init_options = {
+		selector_wrapper 	: [''#wrapper_distort_content_on_scroll', '.block-4 span'], // передаём селекторы
+		implementation_name	: 'distort_content_on_scroll',
+		will_change 		: 'transform',
+		timing_function		: 'cubic-bezier(.6,.17,.85,.54)', // кривая Безье анимации
+		transiton_duration	: 0.5,                            // продолжительность анимации 
+		speed 		    : 0.35,
+		offset_max		: 100
+	};
+	window.animator.init(init_options);
+</script>
+```  
+***
+
+Ссылка на онлайн сервис настройки [кривых Безье](https://cubic-bezier.com/) 
