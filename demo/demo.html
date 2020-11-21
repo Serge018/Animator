@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animator</title>
+
+	<style type="text/css">
+		.block {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100vh; 
+		}
+
+		.block span {
+			display: inline-block;
+			font-size: 32px;
+			width : 75%;
+			/*height: auto;*/
+		}
+
+		.block-1, 
+		.block-3, 
+		.block-5 {
+			background-color: black;
+		}
+
+		.block-1 span, 
+		.block-3 span, 
+		.block-5 span {
+			color: white;
+		}
+		
+		.block-2, 
+		.block-4 {
+			background-color: white;
+		}
+
+		.block-2 span, 
+		.block-4 span {
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<section id="wrapper_distort_content_on_scroll">
+		<div class="block block-1">
+			<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident quia eveniet non numquam quasi, assumenda saepe aspernatur tenetur commodi! Temporibus itaque fugiat adipisci necessitatibus quidem numquam exercitationem consequatur voluptatum saepe quo, in ipsum, repellat? Deleniti recusandae, rerum a nesciunt enim asperiores ab consectetur, cupiditate et itaque omnis magni? Exercitationem dignissimos nostrum corporis hic perferendis ex aliquid obcaecati eius quae, consequatur.</span>
+		</div>
+		<div class="block block-2">
+			<span>Dolor odio perferendis incidunt magnam quisquam quis facere molestias! Possimus aliquam, vel dolores aperiam. Nulla qui repellat consectetur, quas sunt, voluptatibus? Quisquam, aliquam consequatur voluptatibus omnis consequuntur illum corrupti, at, ex recusandae dolorum harum ipsa, voluptates qui ratione alias quam facere. Vitae, asperiores dolorem animi nihil dolores excepturi quaerat ullam ducimus corporis iusto. Dicta ducimus reprehenderit quidem blanditiis, impedit perferendis?</span>
+		</div>
+		<div class="block block-3">
+			<span>A necessitatibus maxime quae, officia nemo sit est in corrupti repellendus velit hic nihil accusantium illo porro odio assumenda quaerat magnam laboriosam earum. Ipsa, qui dicta, consectetur perspiciatis sint veritatis distinctio? Possimus, vero deleniti ab iusto dolorum maiores quod reprehenderit quo ullam, veritatis laboriosam quam voluptas molestiae? Illum in tenetur quasi animi perferendis accusantium nostrum magnam amet, mollitia, rem, ea.</span>
+		</div>
+		<div class="block block-4">
+			<span>Delectus, deleniti dolore sapiente saepe labore explicabo, accusamus, nesciunt totam commodi nisi, quisquam accusantium reiciendis magni sint. Reiciendis unde accusantium, nulla hic, laboriosam iste reprehenderit velit dolore labore quos perspiciatis harum et sint! Voluptate odit aliquid dignissimos consequatur illo delectus officia eos ullam incidunt placeat sed possimus distinctio rerum, quos quidem animi optio ut iure quis rem voluptatibus, voluptates perferendis.</span>
+		</div>
+		<div class="block block-5">
+			<span>Harum, modi excepturi, incidunt dolor aliquam magni suscipit atque necessitatibus illum corrupti debitis iure, corporis delectus officiis ullam minima, aut odio. Inventore enim numquam est, maiores eaque veritatis, omnis, placeat deleniti praesentium quasi tempore iusto, voluptatibus eos. Soluta architecto, libero voluptates nisi ipsa dolorum ipsam, perferendis illo quis labore quasi doloribus tempora repellendus iure quibusdam assumenda optio, dolorem enim nobis!</span>
+		</div>
+		<div class="block block-6">
+			<span>Illum quidem, facilis quibusdam commodi iste sapiente excepturi, officiis laudantium, cum possimus, quaerat eum tenetur molestias autem id eveniet. Adipisci fuga exercitationem, quidem ducimus non quis, amet dolorum at impedit modi minus facere illum atque quo a, esse. Veniam doloremque ipsa praesentium quis velit ipsum repudiandae labore quam, in quidem delectus est eaque fugit quia, perferendis doloribus? Deserunt, accusantium, asperiores?</span>
+		</div>
+	</section>
+	<script type="text/javascript" src="../build/Animator.dev.js"></script>
+	<script type="text/javascript">
+
+		window.animator = new Animator();
+		var init_options = {
+			selector_wrapper 	: '#wrapper_distort_content_on_scroll',
+			implementation_name	: 'distort_content_on_scroll',
+			timing_function		: 'cubic-bezier(.41,.07,.85,.54)',
+		};
+		window.animator.init(init_options);
+	</script>
+</body>
+</html>
