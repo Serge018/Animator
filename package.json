@@ -1,0 +1,22 @@
+{
+  "name": "component_dialog",
+  "version": "0.1.0",
+  "description": "Диалоговое окно",
+  "main": "gulpfile.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://internal-service-git-24.mk-admin.ru/frontent/components/dialog.git"
+  },
+  "author": "Sergey Ivenskiy",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-snakecasejs": "^2.2.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-terser": "^1.2.0"
+  },
+  "dependencies": {},
+  "keywords": []
+}
