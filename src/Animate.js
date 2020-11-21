@@ -26,10 +26,11 @@ class Animator
 			{
 				distort_content_on_scroll :
 				{
-					transiton_duration	: 0.5,
 					will_change 		: 'transform',
 					timing_function		: 'cubic-bezier(.6,.17,.85,.54)',
-					speed 				: 0.35
+					transiton_duration	: 0.5,
+					speed 				: 0.35,
+					offset_max			: 100
 				}
 			};
 
@@ -151,6 +152,11 @@ class Animator
 		{
 			let new_position 		= window.pageYOffset;
 			let diff 				= new_position - current_position;
+			if (diff > init_options.offset_max)
+			{
+				diff = init_options.offset_max;
+			}
+
 			let skew 				= Math.floor(diff * init_options.speed);
 			current_position 		= new_position;
 			wrapper.style.transform = `skewY(${ skew }deg)`; 
