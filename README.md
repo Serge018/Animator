@@ -10,7 +10,7 @@
   ```js
     <script type="text/javascript">
       // содержиое файла build/Animator.dev.js вставляем здесь
-    <.script>
+    </script>
   ```
 3. В самомй низу страници копируем к себе код, указанный ниже.  
 ```js
