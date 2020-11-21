@@ -22,7 +22,7 @@
 		will_change 		: 'transform',
 		timing_function		: 'cubic-bezier(.6,.17,.85,.54)', // кривая Безье анимации
 		transiton_duration	: 0.5,                            // продолжительность анимации 
-		speed 		    : 0.35,
+		speed 		    	: 0.35,
 		offset_max		: 100
 	};
 	window.animator.init(init_options);
