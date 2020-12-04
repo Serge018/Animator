@@ -102,25 +102,18 @@ class Animator
 		let is_firefox	= navigator.userAgent.search('Firefox') > -1;
 		if (is_firefox)
 		{
+			// в firefox эта анимация лагает
 			return false;
 		}
-
-		let setup = (init_options) =>
-		{
-			let result = this[setup_method_name](init_options);
-			if (!result)
-			{
-				console.error(this.module_name + ` :: ${ implementation_name } not setup`);
-			}
-
-			return result;
-		};
 
 		let selectors_wrapper = selector_wrapper.toString().split(',');
 		for (let selector_wrapper of selectors_wrapper)
 		{
-			// @todo проверка
-			setup({ ...init_options, selector_wrapper });
+			let result = this[setup_method_name]({ ...init_options, selector_wrapper });
+			if (!result)
+			{
+				console.error(this.module_name + ` :: ${ implementation_name } not setup`);
+			}
 		}
 
 		return true;
@@ -162,14 +155,20 @@ class Animator
 		{
 			let new_position 		= window.pageYOffset;
 			let diff 				= new_position - current_position;
+			
+
 			if (diff > init_options.offset_max)
 			{
 				diff = init_options.offset_max;
 			}
+			else if (diff < (0 - init_options.offset_max))
+			{
+				diff = (0 - init_options.offset_max);
+			}
 
 			let skew 				= Math.floor(diff * init_options.speed);
 			current_position 		= new_position;
-			wrapper.style.transform = `skewY(${ skew }deg)`; 
+			wrapper.style.transform = `skewY(${ skew }deg)`;
 
 			requestAnimationFrame(call_distord);
 		};
